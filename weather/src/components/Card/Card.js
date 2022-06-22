@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import Clear from '../images/day/113.png'
-import CloudsDay from '../images/day/116.png'
-import RainDay from '../images/day/263.png'
-import FogDay from '../images/day/248.png'
-import ClearNight from '../images/night/113.png'
-import CloudsNight from '../images/night/119.png'
-import RainNight from '../images/night/263.png'
-import FogNight from '../images/night/248.png'
+import Clear from '../../images/day/113.png'
+import CloudsDay from '../../images/day/116.png'
+import RainDay from '../../images/day/263.png'
+import FogDay from '../../images/day/248.png'
+import ClearNight from '../../images/night/113.png'
+import CloudsNight from '../../images/night/119.png'
+import RainNight from '../../images/night/263.png'
+import FogNight from '../../images/night/248.png'
 
-import bgClear from '../videos/day/clear.mp4'
-import bgClouds from '../videos/day/clouds.mp4'
-import bgRain from '../videos/day/rain.mp4'
-import bgFog from '../videos/day/fog.mp4'
+import bgClear from '../../videos/day/clear.mp4'
+import bgClouds from '../../videos/day/clouds.mp4'
+import bgRain from '../../videos/day/rain.mp4'
+import bgFog from '../../videos/day/fog.mp4'
 
-import bgClearNight from '../videos/night/clear_night.mp4'
-import bgCloudsNight from '../videos/night/clouds_night.mp4'
-import bgRainNight from '../videos/night/rain_night.mp4'
-import bgFogNight from '../videos/night/fog_night.mp4'
+import bgClearNight from '../../videos/night/clear_night.mp4'
+import bgCloudsNight from '../../videos/night/clouds_night.mp4'
+import bgRainNight from '../../videos/night/rain_night.mp4'
+import bgFogNight from '../../videos/night/fog_night.mp4'
 import './Card.css';
-import { deleteCity, getAllCities, saveCity } from '../actions/actions';
+import { deleteCity, getAllCities, saveCity } from '../../actions/actions';
 import { useDispatch } from 'react-redux';
 
 export default function Card({ country, dayTime, weather, temp, min, max, name, onClose, fav }) {

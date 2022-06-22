@@ -9,7 +9,7 @@ export default function SearchBar({ onSearch }) {
   const handleInputChange = (e) => {
     setCity(e.target.value)
     setInput(e.target.value)
-    console.log(e.target.value)
+    //console.log(e.target.value)
   }
 
   const handleSubmit = (e) => {

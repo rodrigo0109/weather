@@ -4,12 +4,12 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Cities from './components/Cities';
+import Nav from './components/Nav/Nav.js';
+import Home from './components/Home/Home.js';
+import Cities from './components/Cities/Cities.js';
+import Footer from './components/Footer/Footer.js';
 
 import './App.css';
-import Footer from './components/Footer';
 
 export default function App() {
 

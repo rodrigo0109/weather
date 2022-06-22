@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import Card from './Card'
+import Card from '../Card/Card.js'
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCities } from '../actions/actions';
+import { getAllCities } from '../../actions/actions';
 import './Cities.css'
 
 const Cities = () => {
@@ -13,6 +13,7 @@ const Cities = () => {
 
   useEffect(() => {
     dispatch(getAllCities())
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const state = useSelector(state => state.cities)
