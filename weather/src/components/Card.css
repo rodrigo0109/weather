@@ -56,6 +56,17 @@
   cursor: pointer;
   outline: none;
 }
+.close_icon .close_city {
+  position: absolute;
+  background: none;
+  border: none;
+  right: 10px;
+  top: 8px;
+  z-index: 1;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
 
 .close_icon .save {
   height: 100%;

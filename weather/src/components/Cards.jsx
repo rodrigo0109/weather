@@ -3,7 +3,7 @@ import './Cards.css';
 
 import Card from './Card.jsx';
 
-export default function Cards({cities, onClose, setMyCities, myCities}) {
+export default function Cards({cities, onClose}) {
   if(cities){
     return (
       <div className='cards'>
@@ -23,8 +23,6 @@ export default function Cards({cities, onClose, setMyCities, myCities}) {
             timezone={c.timezone}
             dayTime={c.dayTime}
             country={c.country}
-            setMyCities={setMyCities}
-            myCities={myCities}
           /> )}
       </div>
     );

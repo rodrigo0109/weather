@@ -18,48 +18,36 @@ import bgCloudsNight from '../videos/night/clouds_night.mp4'
 import bgRainNight from '../videos/night/rain_night.mp4'
 import bgFogNight from '../videos/night/fog_night.mp4'
 import './Card.css';
+import { deleteCity, getAllCities, saveCity } from '../actions/actions';
+import { useDispatch } from 'react-redux';
 
-export default function Card({ country, dayTime, timezone, time, sunrise, sunset, weather, temp, min, max, name, img, onClose, id, setMyCities, myCities }) {
+export default function Card({ country, dayTime, weather, temp, min, max, name, onClose, fav }) {
 
   const [icon, setIcon] = useState()
   const [bg, setBg] = useState()
-
-  //console.log(dayTime)
 
   useEffect(() => {
     handleIcon(dayTime, weather)
   }, [])
 
+  const dispatch = useDispatch()
+
   const handleFav = () => {
-    setMyCities([
-      ...myCities,
-      {
-        min:min,
-        max:max,
-        temp:temp,
-        name:name,
-        weather:weather,
-        dayTime:dayTime,
-        country:country
-      }
-    ])
+    dispatch( saveCity( {
+      min: min,
+      max: max,
+      temp: Math.round(temp),
+      name: name,
+      weather: weather,
+      dayTime: dayTime,
+      country: country,
+    } ) )
   }
 
-  /////// CURRENT /////////////
-  /* let currentValue = time + (timezone)
-  let currentTime = new Date(currentValue * 1000)
-  let utc = currentTime.toUTCString().slice(-12, -4)
-  console.log(utc)
-  /////// SUNRISE /////////////
-  let sunriseValue = sunrise + (timezone)
-  let sunriseDate = new Date(sunriseValue * 1000)
-  let utcSunrise = sunriseDate.toUTCString().slice(-12, -4)
-  console.log(utcSunrise)
-  /////// SUNSET /////////////
-  let sunsetValue = sunset + (timezone)
-  let sunsetDate = new Date(sunsetValue * 1000)
-  let utcSunset = sunsetDate.toUTCString().slice(-12, -4)
-  console.log(utcSunset) */
+  const handleDeleteCity = async(name) => {
+    await dispatch( deleteCity({ name: name }) )
+    dispatch( getAllCities() )
+  }
 
   const handleIcon = (dayTime, weather) => {
     if (dayTime === 'dia') {
@@ -78,20 +66,30 @@ export default function Card({ country, dayTime, timezone, time, sunrise, sunset
     }
   }
 
-  console.log(icon)
-
   return (
     <div className='card'>
       <video autoPlay loop muted>
         <source src={bg} type="video/mp4" />
       </video>
       <div className="close_icon">
-        <button onClick={handleFav} className="save"><span className="material-symbols-outlined icon">
-          bookmark
-        </span></button>
-        <button onClick={onClose} className="closed"><span className="material-symbols-outlined icon">
-          close
-        </span></button>
+        {
+          !fav &&
+          <button onClick={handleFav} className="save"><span className="material-symbols-outlined icon">
+            bookmark
+          </span></button>
+        }
+        {
+          !fav &&
+          <button onClick={onClose} className="closed"><span className="material-symbols-outlined icon">
+            close
+          </span></button>
+        }
+        {
+          fav &&
+          <button onClick={() => handleDeleteCity(name)} className="close_city"><span className="material-symbols-outlined icon">
+            close
+          </span></button>
+        }
       </div>
       <div className="card-body">
         <h3 className="card-title">{name},{country}</h3>

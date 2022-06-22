@@ -13,7 +13,6 @@ import './App.css';
 export default function App() {
 
   const [ cities, setCities ] = useState([])
-  const [ myCities, setMyCities ] = useState([])
 
   function onClose(id) {
     setCities(oldCities => oldCities.filter(c => c.id !== id));
@@ -52,15 +51,13 @@ export default function App() {
     }
 
 
-    console.log('ciudades',myCities)
-
   return (
     <div className="App">
       <HashRouter>
       <Nav />
       <Routes>
-        <Route path='/' exact element={<Home cities={ cities } onClose={ onClose } onSearch={ onSearch } setMyCities={ setMyCities } myCities={myCities}/>} />
-        <Route path='/cities' exact element={<Cities myCities={myCities} />} />
+        <Route path='/' exact element={<Home cities={ cities } onClose={ onClose }  onSearch={ onSearch } />} />
+        <Route path='/cities' exact element={<Cities />} />
       </Routes>
       </HashRouter>
     </div>
