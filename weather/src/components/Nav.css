@@ -18,6 +18,7 @@
 
 .link {
   color: rgb(179, 176, 176);
+  transition: all 0.3s ease;
 }
 .link:hover {
   text-decoration: none;

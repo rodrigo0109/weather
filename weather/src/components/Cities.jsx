@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Card from './Card'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCities } from '../actions/actions';
+import './Cities.css'
 
 const Cities = () => {
 
@@ -15,7 +16,7 @@ const Cities = () => {
   const state = useSelector( state => state.cities )
   //console.log(state)
   return (
-    <div>
+    <div className='cities_container'>
       {
         state?.map( (c,i) => (
           <Card 

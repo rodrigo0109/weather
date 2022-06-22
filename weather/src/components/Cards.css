@@ -4,4 +4,50 @@
   flex-wrap: wrap;
   justify-content: center;
   /* border: 1px solid red; */
+  transform: translateX(0.3s);
+}
+
+.btn_direct_container {
+  width: 100%;
+  margin: auto;
+  animation: fadeIn 0.6s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.pag_prev {
+  margin-right: 15px;
+}
+
+.btn_direct_container .pag_next {
+  border: none;
+  outline:none;
+  border-radius: 2px;
+  color: #181818;
+  background-color: darkviolet;
+  transition: all 0.3s ease-in-out
+}
+
+.btn_direct_container .pag_prev {
+  border: none;
+  outline:none;
+  border-radius: 2px;
+  color: #181818;
+  background-color: darkviolet;
+  transition: all 0.3s ease-in-out
+}
+
+.pag_next:hover {
+  background-color: rgb(194, 71, 247);
+}
+.pag_prev:hover {
+  background-color: rgb(194, 71, 247);
 }

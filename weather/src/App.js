@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Cities from './components/Cities';
 
 import './App.css';
+import Footer from './components/Footer';
 
 export default function App() {
 
@@ -59,6 +60,7 @@ export default function App() {
         <Route path='/' exact element={<Home cities={ cities } onClose={ onClose }  onSearch={ onSearch } />} />
         <Route path='/cities' exact element={<Cities />} />
       </Routes>
+      <Footer />
       </HashRouter>
     </div>
   );

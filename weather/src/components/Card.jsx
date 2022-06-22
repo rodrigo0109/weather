@@ -25,6 +25,7 @@ export default function Card({ country, dayTime, weather, temp, min, max, name, 
 
   const [icon, setIcon] = useState()
   const [bg, setBg] = useState()
+  const [fade, setFadeOut] = useState('card')
 
   useEffect(() => {
     handleIcon(dayTime, weather)
@@ -49,6 +50,11 @@ export default function Card({ country, dayTime, weather, temp, min, max, name, 
     dispatch( getAllCities() )
   }
 
+  const handleClose = async() => {
+    await setFadeOut('card_fadeOut')
+    onClose()
+  }
+
   const handleIcon = (dayTime, weather) => {
     if (dayTime === 'dia') {
       if (weather === 'Clear') { setIcon(Clear); setBg(bgClear) }
@@ -67,7 +73,7 @@ export default function Card({ country, dayTime, weather, temp, min, max, name, 
   }
 
   return (
-    <div className='card'>
+    <div className={fade}>
       <video autoPlay loop muted>
         <source src={bg} type="video/mp4" />
       </video>
@@ -80,7 +86,7 @@ export default function Card({ country, dayTime, weather, temp, min, max, name, 
         }
         {
           !fav &&
-          <button onClick={onClose} className="closed"><span className="material-symbols-outlined icon">
+          <button onClick={handleClose} className="closed"><span className="material-symbols-outlined icon">
             close
           </span></button>
         }

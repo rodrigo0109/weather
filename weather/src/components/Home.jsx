@@ -11,7 +11,6 @@ const Home = ({ cities, onClose, onSearch }) => {
                 cities={cities}
                 onClose={onClose}
             />
-            <Footer />
         </div>
     )
 }

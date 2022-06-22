@@ -20,7 +20,7 @@ export default function SearchBar({onSearch}) {
 
   return (
     <div className="form_container">
-      <h1>Weather App - Find your city</h1>
+      <h1>Find your current weather</h1>
       <form
         className="form" 
         onSubmit={handleSubmit}>

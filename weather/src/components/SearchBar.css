@@ -9,12 +9,26 @@
     align-items: center;
     justify-content: center;
     /* border: 1px solid red; */
+    animation: fadeIn 0.9s;
+    transition: all 0.6s ease-in-out;
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
 
 .form_container h1 {
     margin-top: 30px;
     font-family: 'Rubik', sans-serif;
     font-weight: bold;
+    color: #323232;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .form {
@@ -36,5 +50,10 @@
     border-radius: 4px;
     cursor: pointer;
     background-color: darkviolet;
-    color: #fff;
+    color: #181818;
+    transition: all 0.3s ease;
+}
+
+.btn-search:hover {
+    background-color: rgb(194, 71, 247);
 }
