@@ -29,6 +29,7 @@ export default function Card({ country, dayTime, weather, temp, min, max, name, 
 
   useEffect(() => {
     handleIcon(dayTime, weather)
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const dispatch = useDispatch()
