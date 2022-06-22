@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import './SearchBar.css'
 
-export default function SearchBar({onSearch}) {
+export default function SearchBar({ onSearch }) {
 
-  const [ city , setCity ] = useState('')
-  const [ input , setInput ] = useState('')
+  const [city, setCity] = useState('')
+  const [input, setInput] = useState('')
 
   const handleInputChange = (e) => {
     setCity(e.target.value)
@@ -22,16 +22,18 @@ export default function SearchBar({onSearch}) {
     <div className="form_container">
       <h1>Find your current weather</h1>
       <form
-        className="form" 
+        className="form"
         onSubmit={handleSubmit}>
         <input
           className="form-control me-2"
           type="text"
           placeholder="City..."
-          onChange={ handleInputChange }
+          onChange={handleInputChange}
           value={input}
         />
-        <input className="btn-search" type="submit" value="Search" />
+        <button className="btn-search" type="submit" ><span className="material-symbols-outlined">
+          search
+        </span></button>
       </form>
     </div>
   );
