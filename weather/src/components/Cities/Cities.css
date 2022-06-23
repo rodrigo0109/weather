@@ -1,6 +1,6 @@
 
 .cities_container {
-    width: 80%;
+    width: 90%;
     height: 90vh;
     margin: auto;
     display: flex;
@@ -76,4 +76,31 @@
   }
   .pag_prev_cities:hover {
     color: #fff;
+  }
+
+  .cities_cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .cities_container {
+      flex-direction: column;
+      height: auto;
+    }
+    .cities_cards {
+      flex-direction: row;
+      height: auto;
+    }
+    .cities_title {
+      font-size: 26px;
+    }
+    .btn_direct_container_cities{
+      z-index: 10;
+    }
   }

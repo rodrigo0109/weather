@@ -1,21 +1,20 @@
 import React, { useState } from "react";
-import './SearchBar.css'
+import './SearchBar.css';
 
 export default function SearchBar({ onSearch }) {
 
-  const [city, setCity] = useState('')
-  const [input, setInput] = useState('')
+  const [city, setCity] = useState('');
+  const [input, setInput] = useState('');
 
   const handleInputChange = (e) => {
-    setCity(e.target.value)
-    setInput(e.target.value)
-    //console.log(e.target.value)
+    setCity(e.target.value);
+    setInput(e.target.value);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(city);
-    setInput('')
+    setInput('');
   }
 
   return (

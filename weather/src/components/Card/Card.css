@@ -25,30 +25,6 @@
   }
 }
 
-.card_fadeOut {
-  margin: 20px;
-  width: 300px;
-  height: 400px;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.1);
-  /*  z-index: 1; */
-  animation: fadeOut 0.6s;
-  transition: all 0.6s ease-in-out;
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-
 .card:hover {
   transform: scale(1.02);
 }
@@ -99,17 +75,13 @@
   position: absolute;
   background: none;
   border: none;
-  color: #fff;
+  color: rgb(238, 224, 34);
   cursor: pointer;
   z-index: 1;
   right: 40px;
   top: 5px;
   outline: none;
   /* font-size: 22px; */
-}
-
-.icon:hover {
-  color: #111;
 }
 
 .card-body {
@@ -157,4 +129,14 @@
   flex-direction: row;
   color: #fff;
   /* border: 1px solid red; */
+}
+
+.iconoClima {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 350px) {
+  .card {
+    width: 250px;
+  }
 }

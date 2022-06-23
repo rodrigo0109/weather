@@ -1,6 +1,6 @@
-import React from 'react'
-import Cards from '../Cards/Cards.js'
-import SearchBar from '../SearchBar/SearchBar.js'
+import React from 'react';
+import Cards from '../Cards/Cards.js';
+import SearchBar from '../SearchBar/SearchBar.js';
 
 const Home = ({ cities, onClose, onSearch }) => {
     return (

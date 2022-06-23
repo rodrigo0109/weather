@@ -58,3 +58,15 @@
 .btn-search:hover {
     background-color: rgb(92, 171, 250);
 }
+
+@media screen and (max-width: 380px) {
+    .form_container h1 {
+      font-size: 26px;
+    }
+    .form {
+      width: 260px;
+    }
+    .form .btn-search {
+      width: 70px;
+    }
+  }

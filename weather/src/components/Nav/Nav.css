@@ -24,3 +24,12 @@
   text-decoration: none;
   color: #fff;
 }
+
+@media screen and (max-width: 450px) {
+  .link_container {
+    max-width: 300px;
+    width: 80%;
+    left: 0;
+    right: 0;
+  }
+}

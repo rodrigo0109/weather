@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* border: 1px solid red; */
+/*   border: 1px solid red; */
   transform: translateX(0.3s);
 }
 
@@ -77,3 +77,16 @@
 .pag_prev:hover {
   color: #fff;
 }
+
+@media screen and (max-width: 1015px) {
+  .cards {
+    height: auto;
+    padding-bottom: 30px;
+  }
+}
+
+/* @media screen and (max-width: 1015px) {
+  .cards {
+    min-width: ;
+  }
+} */
