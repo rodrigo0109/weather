@@ -20,6 +20,10 @@ export default function App() {
   }
 
   function onSearch(ciudad) {
+    if( cities.length > 0 ){
+      let c = cities.map( c => c.name.toLowerCase() )
+      if( c.includes(ciudad) ) return alert('This city already exists');
+    }
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${'4ae2636d8dfbdc3044bede63951a019b'}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
@@ -45,7 +49,7 @@ export default function App() {
           };
           setCities(oldCities => [...oldCities, ciudad]);
         } else {
-          alert("Ciudad no encontrada");
+          alert("City not found!");
         }
       });
 
