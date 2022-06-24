@@ -8,6 +8,7 @@ import FogDay from '../../images/day/248.png';
 import ClearNight from '../../images/night/113.png';
 import CloudsNight from '../../images/night/119.png';
 import RainNight from '../../images/night/263.png';
+import DrizzleNight from '../../images/night/293.png';
 import FogNight from '../../images/night/248.png';
 
 import bgClear from '../../videos/day/clear.mp4';
@@ -73,7 +74,7 @@ export default function Card({ country, dayTime, weather, temp, min, max, name, 
       if (weather === 'Clear') { setIcon(ClearNight); setBg(bgClearNight) }
       if (weather === 'Clouds') { setIcon(CloudsNight); setBg(bgCloudsNight) }
       if (weather === 'Rain') { setIcon(RainNight); setBg(bgRainNight) }
-      if (weather === 'Drizzle') { setIcon(RainNight); setBg(bgRainNight) }
+      if (weather === 'Drizzle') { setIcon(DrizzleNight); setBg(bgDrizzle) }
       if (weather === 'Snow') { setIcon(SnowDay); setBg(bgSnowNight) }
       if (weather === 'Fog' || weather === 'Haze' || weather === 'Mist') { setIcon(FogNight); setBg(bgFogNight) }
       //if (weather === 'Haze') { setIcon(FogNight); setBg(bgFogNight) }
